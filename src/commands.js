@@ -3,7 +3,8 @@ const { prompt } = require("inquirer");
 
 const {
   addTask,
-  listTasks
+  listTasks,
+  deleteTask
 } = require("./controllers/task.controller");
 
 const taskQuestion = [
@@ -41,6 +42,14 @@ program
     listTasks()
   )
 ;
+
+program
+  .command("delete <id>")
+  .alias("d")
+  .description("Delete a task")
+  .action( (_id) => 
+    deleteTask(_id) 
+  );
 
 program
   .parse(process.argv);

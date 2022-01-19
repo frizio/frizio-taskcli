@@ -23,7 +23,14 @@ const listTasks = async () => {
   process.exit(0);
 };
 
+const deleteTask = async (_id) => {
+  await Task.deleteOne({ _id });
+  console.info("Task Deleted");
+  await connection.close();
+};
+
 module.exports = {
   addTask,
-  listTasks
+  listTasks,
+  deleteTask
 };
