@@ -2,7 +2,8 @@ const { program } = require("commander");
 const { prompt } = require("inquirer");
 
 const {
-  addTask
+  addTask,
+  listTasks
 } = require("./controllers/task.controller");
 
 const taskQuestion = [
@@ -30,6 +31,15 @@ program
     const answers = await prompt(taskQuestion);
     addTask(answers);
   })
+;
+
+program
+  .command("list")
+  .alias("l")
+  .description("List all tasks")
+  .action( async () => 
+    listTasks()
+  )
 ;
 
 program

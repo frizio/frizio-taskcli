@@ -8,6 +8,22 @@ const addTask = async (task) => {
   await connection.close();
 };
 
+const listTasks = async () => {
+  const tasks = await Task.find().lean();
+  console.log(`Total Tasks Result: ${tasks.length}`);
+  // console.info(tasks);
+  console.table(
+    tasks.map( (task) => ({
+      _id: task._id.toString(),
+      title: task.title,
+      description: task.description,
+    }))
+  );
+  await connection.close();
+  process.exit(0);
+};
+
 module.exports = {
-  addTask
+  addTask,
+  listTasks
 };
