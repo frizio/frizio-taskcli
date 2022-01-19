@@ -1,8 +1,6 @@
 const { program } = require("commander");
 const { prompt } = require("inquirer");
 
-program.version("1.0.0").description("Task Management CLI");
-
 const taskQuestion = [
   {
     type: "input",
@@ -17,6 +15,10 @@ const taskQuestion = [
 ];
 
 program
+  .version("1.0.0")
+  .description("Task Management CLI");
+
+program
   .command("save")
   .alias("s")
   .description("Save a new task")
@@ -26,4 +28,5 @@ program
   })
 ;
 
-program.parse(process.argv);
+program
+  .parse(process.argv);
