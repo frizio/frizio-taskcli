@@ -1,13 +1,27 @@
 const { program } = require("commander");
+const { prompt } = require("inquirer");
 
 program.version("1.0.0").description("Task Management CLI");
 
+const taskQuestion = [
+  {
+    type: "input",
+    name: "title",
+    message: "Task Title",
+  },
+  {
+    type: "input",
+    name: "description",
+    message: "Task Description",
+  },
+];
+
 program
-  .command("save <title> <description>")
-  .action((title, description) => {
+  .command("save")
+  .action( async () => {
     console.log('Save action...');
-    console.log('Title', title);
-    console.log('Description', description);
+    const answers = await prompt(taskQuestion);
+    console.log(answers);
   })
 ;
 
