@@ -4,8 +4,8 @@ const { MONGODB_URI } = require("./config");
 
 const connectDB = async () => {
   await connect(MONGODB_URI);
-  console.log('MongoDB connected');
-  //console.log(db.connection.name);
+  // console.log('MongoDB connected');
+  // console.log(db.connection.name);
 };
 
 connection.on("error", (err) => {
