@@ -1,11 +1,11 @@
 {
   "name": "frizio-taskcli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Task Management CLI",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "frizio-taskcli": "./src/index.js"
+    "frizio-taskcli": "src/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +18,14 @@
     "dotenv": "^14.2.0",
     "inquirer": "^8.2.0",
     "mongoose": "^6.1.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frizio/frizio-taskcli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frizio/frizio-taskcli/issues"
+  },
+  "homepage": "https://github.com/frizio/frizio-taskcli#readme"
 }
