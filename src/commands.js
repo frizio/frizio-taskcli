@@ -18,8 +18,9 @@ const taskQuestion = [
 
 program
   .command("save")
+  .alias("s")
+  .description("Save a new task")
   .action( async () => {
-    console.log('Save action...');
     const answers = await prompt(taskQuestion);
     console.log(answers);
   })
