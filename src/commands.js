@@ -4,6 +4,7 @@ const { prompt } = require("inquirer");
 const {
   addTask,
   listTasks,
+  updateTask,
   deleteTask
 } = require("./controllers/task.controller");
 
@@ -42,6 +43,15 @@ program
     listTasks()
   )
 ;
+
+program
+  .command("update <id>")
+  .alias("u")
+  .description("Update a task")
+  .action(async (_id) => {
+    const answers = await prompt(taskQuestion);
+    await updateTask(_id, answers);
+  });
 
 program
   .command("delete <id>")

@@ -23,6 +23,12 @@ const listTasks = async () => {
   process.exit(0);
 };
 
+const updateTask = async (_id, newTask) => {
+  await Task.updateOne({ _id }, newTask);
+  console.info("Task Updated");
+  await connection.close();
+};
+
 const deleteTask = async (_id) => {
   await Task.deleteOne({ _id });
   console.info("Task Deleted");
@@ -32,5 +38,6 @@ const deleteTask = async (_id) => {
 module.exports = {
   addTask,
   listTasks,
+  updateTask,
   deleteTask
 };
