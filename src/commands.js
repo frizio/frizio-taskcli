@@ -1,3 +1,4 @@
+const pjson = require('./../package.json');
 const { program } = require("commander");
 const { prompt } = require("inquirer");
 
@@ -23,8 +24,8 @@ const taskQuestion = [
 ];
 
 program
-  .version("1.0.0")
-  .description("Task Management CLI");
+  .version(pjson.version)
+  .description(pjson.description);
 
 program
   .command("save")
