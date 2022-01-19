@@ -1,6 +1,6 @@
 {
   "name": "frizio-taskcli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Task Management CLI",
   "main": "src/index.js",
   "preferGlobal": true,
