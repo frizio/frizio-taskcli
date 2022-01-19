@@ -1,3 +1,9 @@
-// Main file
-console.log('Begin index.js');
-require('./config');
+const { connectDB } = require("./db");
+
+// require("./commands");
+
+async function main() {
+  await connectDB();
+}
+
+main();

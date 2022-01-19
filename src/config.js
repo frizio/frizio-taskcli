@@ -1,3 +1,5 @@
 require("dotenv").config();
-console.log('Environment variablie defined with dotenv');
-console.log(process.env.HELLO);
+
+module.exports = {
+  MONGODB_URI: process.env.MONGODB_URI || "mongodb://localhost/tasksdb",
+};
