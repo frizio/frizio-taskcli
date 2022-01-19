@@ -24,6 +24,7 @@ const listTasks = async () => {
 };
 
 const updateTask = async (_id, newTask) => {
+  // TODO: Check if id exist in the db
   await Task.updateOne({ _id }, newTask);
   console.info("Task Updated");
   await connection.close();
@@ -34,6 +35,7 @@ const deleteTask = async (_id) => {
   console.info("Task Deleted");
   await connection.close();
 };
+
 
 module.exports = {
   addTask,
