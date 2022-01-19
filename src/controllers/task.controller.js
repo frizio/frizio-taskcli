@@ -36,10 +36,37 @@ const deleteTask = async (_id) => {
   await connection.close();
 };
 
+const findTask = async (title) => {
+  const search = new RegExp(title, "i");
+  const tasks = await Task.find({
+    $or: [{ title: search }, { description: search }],
+  }).lean();
+  //console.log(JSON.stringify(tasks, null, 2));
+
+  if (tasks.length === 0) {
+    console.log("No tasks Found");
+    await connection.close();
+    process.exit(0);
+  }
+
+  console.table(
+    tasks.map( (task) => ({
+      _id: task._id.toString(),
+      title: task.title,
+      description: task.description,
+    }))
+  );
+  console.log(`${tasks.length} matches`);
+
+  await connection.close();
+  process.exit(0);
+};
+
 
 module.exports = {
   addTask,
   listTasks,
   updateTask,
-  deleteTask
+  deleteTask,
+  findTask
 };
