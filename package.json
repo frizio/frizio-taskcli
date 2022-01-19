@@ -1,8 +1,12 @@
 {
-  "name": "demo-fazt-taskcli",
+  "name": "frizio-taskcli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "frizio-taskcli": "./src/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
