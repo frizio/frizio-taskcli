@@ -1,6 +1,10 @@
 const { program } = require("commander");
 const { prompt } = require("inquirer");
 
+const {
+  addTask
+} = require("./controllers/task.controller");
+
 const taskQuestion = [
   {
     type: "input",
@@ -24,7 +28,7 @@ program
   .description("Save a new task")
   .action( async () => {
     const answers = await prompt(taskQuestion);
-    console.log(answers);
+    addTask(answers);
   })
 ;
 
