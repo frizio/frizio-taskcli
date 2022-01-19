@@ -51,7 +51,8 @@ program
   .action(async (_id) => {
     const answers = await prompt(taskQuestion);
     await updateTask(_id, answers);
-  });
+  })
+;
 
 program
   .command("delete <id>")
@@ -59,7 +60,8 @@ program
   .description("Delete a task")
   .action( (_id) => 
     deleteTask(_id) 
-  );
+  )
+;
 
 program
   .parse(process.argv);
